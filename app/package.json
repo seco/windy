@@ -1,15 +1,26 @@
 {
   "name": "windy-app",
   "version": "0.0.1",
-  "description": "",
+  "description": "windy web app",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "start": "mosca -v --http-port 3000 --http-bundle --http-static ./ | pino"
   },
   "author": "Ian Chen",
   "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "webpack": "^2.5.1"
+  },
   "dependencies": {
+    "lodash": "^4.17.4",
     "mosca": "^2.4.0",
+    "mqtt": "^2.7.1",
     "pino": "^4.5.1"
   }
 }
